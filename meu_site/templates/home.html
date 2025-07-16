@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Início{% endblock %}
+{% block content %}
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+  {% for imagem in imagens %}
+  <div class="col">
+    <div class="card bg-dark border-0">
+      <img src="{{ imagem.url }}" class="card-img-top rounded" alt="Imagem da galeria">
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- <div class="text-center">
+  <h1>Bem-vindo!</h1>
+  <p class="lead">Sou músico, educador e artista. Aqui você encontra minhas aulas, eventos e projetos.</p>
+  <a href="{% url 'contato' %}" class="btn btn-laranja mt-3">Agende uma conversa</a>
+</div>
+ -->
+{% endblock %}
