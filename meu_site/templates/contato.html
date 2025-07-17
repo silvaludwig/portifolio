@@ -1,6 +1,53 @@
 {% extends 'base.html' %}
 {% block title %}Contato{% endblock %}
 {% block content %}
-<h2>Entre em contato</h2>
-<p>Em breve este formulário permitirá que você agende sua aula!</p>
+<h2 class="text-center mb-4">Entre em Contato</h2>
+
+<form id="form-contato" class="mx-auto" style="max-width: 600px;">
+  <div class="mb-3">
+    <label for="nome" class="form-label">Nome completo</label>
+    <input type="text" class="form-control" id="nome" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control" id="email" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="telefone" class="form-label">Telefone</label>
+    <input type="tel" class="form-control" id="telefone" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="interesse" class="form-label">Estou interessado em:</label>
+    <select class="form-select" id="interesse" required>
+      <option value="" selected disabled>Selecione uma opção</option>
+      <option value="aulas presenciais">Aulas presenciais</option>
+      <option value="aulas online">Aulas online</option>
+      <option value="eventos">Eventos</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-laranja mt-3">Enviar e ir para o WhatsApp</button>
+</form>
+
+<script>
+  const form = document.getElementById('form-contato');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const nome = document.getElementById('nome').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const telefone = document.getElementById('telefone').value.trim();
+    const interesse = document.getElementById('interesse').value;
+
+    const mensagem = `Olá! Meu nome é ${nome}. Estou interessado em ${interesse}. Meu e-mail é ${email} e meu telefone é ${telefone}.`;
+    const encodedMsg = encodeURIComponent(mensagem);
+    const numeroDestino = '5534991993575'; // <-- seu número aqui
+
+    const linkWhatsApp = `https://wa.me/${numeroDestino}?text=${encodedMsg}`;
+    window.open(linkWhatsApp, '_blank');
+  });
+</script>
 {% endblock %}

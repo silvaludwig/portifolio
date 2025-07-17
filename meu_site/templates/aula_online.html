@@ -1,6 +1,130 @@
-{% extends 'base.html' %}
-{% block title %}Aula Online{% endblock %}
+{% extends "base.html" %}
+{% load static %}
+
 {% block content %}
-<h2>Aula Online</h2>
-<p>As aulas de violão são presenciais e voltadas para iniciantes e intermediários. Disponibilizo violões para uso durante a aula.</p>
+<style>
+  .aula-container {
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: auto;
+    color: white;
+  }
+
+  .aula-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .aula-header h1 {
+    font-size: 3rem;
+    color: orange;
+  }
+
+  .aula-header p {
+    font-size: 1.2rem;
+    color: #ddd;
+    margin-top: 10px;
+  }
+
+  .aula-imagem {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(255, 165, 0, 0.2);
+  }
+
+  .vantagens {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 50px;
+  }
+
+  .vantagem-card {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 16px;
+    border-left: 5px solid orange;
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.1);
+  }
+
+  .vantagem-card h3 {
+    margin-bottom: 10px;
+    color: orange;
+  }
+
+  .vantagem-card p {
+    font-size: 0.95rem;
+    color: #ccc;
+  }
+
+  .cta {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .cta a {
+    background-color: orange;
+    color: black;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+
+  .cta a:hover {
+    background-color: #ff9900;
+  }
+</style>
+
+<div class="aula-container">
+  <div class="aula-header">
+    <h1>Aulas Online</h1>
+    <p>Aprenda de qualquer lugar, com conforto, flexibilidade e qualidade no ensino.</p>
+  </div>
+
+  <!-- <img src="{% static '/media/aulas/violao-online.png' %}" alt="Aula Online" class="aula-imagem" /> -->
+  <img src="/media/aulas/violao-online-3.jpg" alt="Aula Online" class="aula-imagem" />
+
+  <div class="vantagens">
+    <div class="vantagem-card">
+      <h3>Flexibilidade de horários</h3>
+      <p>Você escolhe os dias e horários que melhor se encaixam na sua rotina.</p>
+    </div>
+    <div class="vantagem-card">
+      <h3>Sem Deslocamento</h3>
+      <p>Economize tempo e dinheiro evitando trânsito ou transporte até o local das aulas.</p>
+    </div>
+    <div class="vantagem-card">
+      <h3>Aulas Gravadas</h3>
+      <p>Tenha acesso à gravação das aulas pra revisar sempre que quiser.</p>
+    </div>
+    <div class="vantagem-card">
+      <h3>Ambiente Confortável</h3>
+      <p>Aprenda no seu espaço, com seu instrumento, no conforto da sua casa.</p>
+    </div>
+    <div class="vantagem-card">
+      <h3>Material Digital</h3>
+      <p>Apostilas, vídeos, exercícios e arquivos compartilhados diretamente com você.</p>
+    </div>
+    <div class="vantagem-card">
+      <h3>Foco Individualizado</h3>
+      <p>As aulas são adaptadas ao seu ritmo, necessidades e objetivos pessoais.</p>
+    </div>
+    <div class="vantagem-card">
+      <h3>Continuidade Fora de Casa</h3>
+      <p>Basta ter internet e um dispositivo – você não perde o ritmo nem quando está fora de casa.</p>
+    </div>
+    <div class="vantagem-card">
+      <h3>Ferramentas Online</h3>
+      <p>Recursos como metrônomos, afinadores e gravações tornam a aula mais interativa e eficiente.</p>
+    </div>
+  </div>
+
+  <div class="cta">
+    <a href="{% url 'contato' %}">Quero agendar uma aula!</a>
+  </div>
+</div>
+
 {% endblock %}
