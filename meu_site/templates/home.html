@@ -2,20 +2,75 @@
 {% block title %}Início{% endblock %}
 {% block content %}
 
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-  {% for imagem in imagens %}
-  <div class="col">
-    <div class="card bg-dark border-0">
-      <img src="{{ imagem.url }}" class="card-img-top rounded" alt="Imagem da galeria">
+<style>
+  .text-laranja {
+    color: #f97316; /* Tailwind laranja-500 */
+  }
+  .btn-laranja {
+    background-color: #f97316;
+    color: white;
+    border: none;
+  }
+  .btn-laranja:hover {
+    background-color: #ea580c;
+  }
+  .border-laranja {
+    border-color: #f97316 !important;
+  }
+</style>
+
+<!-- Hero Section -->
+<section class="text-white text-center d-flex align-items-center justify-content-center" style="background-image: url('/media/aulas/hero.jpg'); background-size: cover; background-position: center; height: 70vh;">
+  <div class="bg-dark bg-opacity-75 p-4 rounded">
+    <h1 class="display-4">Ludwig Silva</h1>
+    <p class="lead">Arte, educação e uma trajetória musical completa</p>
+  </div>
+</section>
+
+<!-- Resumo dos Serviços -->
+<section class="container my-5">
+  <div class="row text-white">
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 bg-dark border border-laranja">
+        <div class="card-body">
+          <h5 class="card-title text-laranja">Aulas Online</h5>
+          <p class="card-text text-white">Aprenda de onde estiver, com flexibilidade e qualidade no ensino.</p>
+          <a href="{% url 'aula_online' %}" class="btn btn-laranja">Saiba mais</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 bg-dark border border-laranja">
+        <div class="card-body">
+          <h5 class="card-title text-laranja">Aulas Presenciais</h5>
+          <p class="card-text text-white">Aulas semanais no bairro Santa Mônica com instrumentos disponíveis para uso.</p>
+          <a href="{% url 'aula_presencial' %}" class="btn btn-laranja">Saiba mais</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 bg-dark border border-laranja">
+        <div class="card-body">
+          <h5 class="card-title text-laranja">Eventos</h5>
+          <p class="card-text text-white">Acompanhe minha agenda de apresentações e projetos artísticos.</p>
+          <a href="{% url 'eventos' %}" class="btn btn-laranja">Ver eventos</a>
+        </div>
+      </div>
     </div>
   </div>
-  {% endfor %}
-</div>
+</section>
 
-<!-- <div class="text-center">
-  <h1>Bem-vindo!</h1>
-  <p class="lead">Sou músico, educador e artista. Aqui você encontra minhas aulas, eventos e projetos.</p>
-  <a href="{% url 'contato' %}" class="btn btn-laranja mt-3">Agende uma conversa</a>
-</div>
- -->
+<!-- Galeria -->
+<section class="container my-5">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+    {% for imagem in imagens %}
+    <div class="col">
+      <div class="card bg-dark border-0">
+        <img src="{{ imagem.url }}" class="card-img-top rounded" alt="Imagem da galeria">
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
 {% endblock %}

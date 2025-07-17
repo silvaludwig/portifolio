@@ -1,6 +1,130 @@
-{% extends 'base.html' %}
-{% block title %}Aulas Presenciais{% endblock %}
+{% extends "base.html" %}
+{% load static %}
+
 {% block content %}
-<h2>Aulas Presenciais</h2>
-<p>Disponíveis em Uberlândia (MG), no bairro Santa Mônica. Indicado para iniciantes e intermediários. Forneço instrumentos durante as aulas.</p>
+<style>
+  .aula-container {
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: auto;
+    color: white;
+  }
+
+  .aula-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .aula-header h1 {
+    font-size: 3rem;
+    color: orange;
+  }
+
+  .aula-header p {
+    font-size: 1.2rem;
+    color: #ddd;
+    margin-top: 10px;
+  }
+
+  .aula-imagem {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(255, 165, 0, 0.2);
+  }
+
+  .vantagens {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 50px;
+  }
+
+  .vantagem-card {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 16px;
+    border-left: 5px solid orange;
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.1);
+  }
+
+  .vantagem-card h3 {
+    margin-bottom: 10px;
+    color: orange;
+  }
+
+  .vantagem-card p {
+    font-size: 0.95rem;
+    color: #ccc;
+  }
+
+  .cta {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .cta a {
+    background-color: orange;
+    color: black;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+
+  .cta a:hover {
+    background-color: #ff9900;
+  }
+</style>
+
+<div class="aula-container">
+  <div class="aula-header">
+    <h1>Aulas Presenciais</h1>
+    <p>Aprenda com acompanhamento próximo, prática em grupo e interação ao vivo.</p>
+  </div>
+
+  <!-- <img src="{% static '/media/aulas/violao-presencial.png' %}" alt="Aula Presencial" class="aula-imagem" /> -->
+  <img src="/media/aulas/aula-presencial.jpg" alt="Aula Presencial" class="aula-imagem" />
+
+  <div class="vantagens">
+    <div class="vantagem-card">
+      <h3>Contato Humano</h3>
+      <p>A troca direta com o professor e colegas estimula o aprendizado e a motivação.</p>
+    </div>
+    <div class="vantagem-card">
+      <h3>Correção Imediata</h3>
+      <p>Erros de postura, afinação e ritmo são corrigidos no momento, ao vivo.</p>
+    </div>
+    <div class="vantagem-card">
+      <h3>Ambiente Musical</h3>
+      <p>Estar em um espaço voltado para música favorece a concentração e o foco.</p>
+    </div>
+    <div class="vantagem-card">
+      <h3>Integração Social</h3>
+      <p>Você pode conhecer outros músicos e participar de encontros e grupos de estudo.</p>
+    </div>
+    <div class="vantagem-card">
+      <h3>Instrumentos Disponíveis</h3>
+      <p>Para quem não possui instrumento, há disponibilidade para uso durante as aulas.</p>
+    </div>
+    <div class="vantagem-card">
+      <h3>Rotina Estabelecida</h3>
+      <p>Ter um horário fixo ajuda a manter uma disciplina constante nos estudos.</p>
+    </div>
+    <div class="vantagem-card">
+      <h3>Feedback Visual Completo</h3>
+      <p>O professor pode analisar sua postura, posição das mãos e técnica com mais precisão.</p>
+    </div>
+    <div class="vantagem-card">
+      <h3>Dinâmica Coletiva</h3>
+      <p>Aprender com os outros amplia sua percepção musical e estimula o crescimento conjunto.</p>
+    </div>
+  </div>
+
+  <div class="cta">
+    <a href="{% url 'contato' %}">Quero agendar uma aula!</a>
+  </div>
+</div>
+
 {% endblock %}
