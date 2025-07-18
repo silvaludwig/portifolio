@@ -1,6 +1,135 @@
 {% extends 'base.html' %}
 {% block title %}Eventos{% endblock %}
+
 {% block content %}
-<h2>Eventos</h2>
-<p>Casamentos, aniversários, eventos corporativos... leve seu evento pra um novo patamar</p>
+
+<style>
+  .hero-eventos {
+    background-image: url('/media/aulas/hero-eventos-3.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+  }
+
+  .hero-overlay {
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 800px;
+  }
+
+  .eventos-container {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+    color: white;
+  }
+
+  .eventos-title {
+    color: #ff6f00;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .evento-box {
+    background-color: #121212;
+    border: 1px solid #ff6f00;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 10px rgba(255, 111, 0, 0.1);
+  }
+
+  .evento-box h4 {
+    color: #ff6f00;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+  }
+
+  .evento-box p {
+    color: #e0e0e0;
+    line-height: 1.6;
+  }
+
+  .contato-section {
+    text-align: center;
+    margin: 60px 0;
+  }
+
+  .btn-laranja {
+    background-color: #ff6f00;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+  }
+
+  .btn-laranja:hover {
+    background-color: #e65c00;
+  }
+
+  @media (min-width: 768px) {
+    .eventos-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .evento-box {
+      flex: 1 1 calc(50% - 30px);
+    }
+  }
+</style>
+
+<!-- Hero Section -->
+<section class="hero-eventos">
+  <div class="hero-overlay">
+    <h1>Música para Momentos Inesquecíveis</h1>
+    <p>Trilhas sonoras personalizadas para casamentos, aniversários, eventos corporativos e mais</p>
+  </div>
+</section>
+
+<!-- Conteúdo -->
+<section class="eventos-container">
+  <h2 class="eventos-title">Eventos em que atuo</h2>
+  <p style="text-align: center; max-width: 700px; margin: 0 auto 40px;">
+    Minha experiência como músico ao vivo abrange diferentes estilos e momentos, sempre com sensibilidade, profissionalismo e cuidado com cada detalhe.
+  </p>
+
+  <div class="eventos-grid">
+    <div class="evento-box">
+      <h4>🎻 Casamentos</h4>
+      <p>Execução ao vivo de músicas especiais para cerimônias e recepções. Repertório personalizado e estrutura adaptável ao espaço do evento.</p>
+    </div>
+    <div class="evento-box">
+      <h4>🎉 Aniversários</h4>
+      <p>Traga emoção e elegância para sua celebração com performances ao vivo, seja em ambiente íntimo ou em festas maiores.</p>
+    </div>
+    <div class="evento-box">
+      <h4>🏢 Eventos Corporativos</h4>
+      <p>Apresentações refinadas para coquetéis, confraternizações, lançamentos de produtos e recepções empresariais.</p>
+    </div>
+    <div class="evento-box">
+      <h4>💡 Outras ocasiões</h4>
+      <p>Disponível também para formaturas, jantares, homenagens e eventos culturais. Entre em contato para montar algo único.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Botão de Contato -->
+<section class="contato-section">
+  <a href="{% url 'contato' %}" class="btn-laranja">Solicitar orçamento</a>
+</section>
+
 {% endblock %}
