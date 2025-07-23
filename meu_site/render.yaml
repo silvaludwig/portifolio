@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: seu-portfolio
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn meu_site.wsgi
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: meu_site.settings
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: false
