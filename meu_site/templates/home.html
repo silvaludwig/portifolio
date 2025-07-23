@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}Início{% endblock %}
 {% block content %}
 
@@ -17,10 +18,17 @@
   .border-laranja {
     border-color: #f97316 !important;
   }
+
+  .hero-section {
+    background-image: url("{% static 'aulas/hero.png' %}");
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+  }
 </style>
 
 <!-- Hero Section -->
-<section class="text-white text-center d-flex align-items-center justify-content-center" style="background-image: url('/media/aulas/hero.png'); background-size: cover; background-position: center; height: 70vh;">
+<section class="text-white text-center d-flex align-items-center justify-content-center hero-section">
   <div class="bg-dark bg-opacity-75 p-4 rounded">
     <h1 class="display-4">LUDWIG</h1>
     <p class="lead">Arte, educação e uma trajetória musical completa</p>

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}Sobre{% endblock %}
 {% block content %}
 
@@ -7,7 +8,7 @@
 <!-- Capítulo 1 -->
 <div class="row align-items-center mb-5">
   <div class="col-md-6">
-    <img src="/media/sobre/lud-sam.jpeg" class="img-fluid rounded shadow" alt="Capítulo 1">
+    <img src="{% static 'sobre/lud-sam.jpeg' %}" class="img-fluid rounded shadow" alt="Capítulo 1">
   </div>
   <div class="col-md-6">
     <h3 class="text-warning">Capítulo 1: Influências</h3>
@@ -18,7 +19,7 @@
 <!-- Capítulo 2 -->
 <div class="row align-items-center mb-5 flex-md-row-reverse">
   <div class="col-md-6">
-    <img src="/media/sobre/lud-ufu.jpeg" class="img-fluid rounded shadow" alt="Capítulo 2">
+    <img src="{% static 'sobre/lud-ufu.jpeg' %}" class="img-fluid rounded shadow" alt="Capítulo 2">
   </div>
   <div class="col-md-6">
     <h3 class="text-warning">Capítulo 2: Formação e Descobertas</h3>
@@ -29,7 +30,7 @@
 <!-- Capítulo 3 -->
 <div class="row align-items-center mb-5">
   <div class="col-md-6">
-    <img src="/media/sobre/lud-violino-evento.jpeg" class="img-fluid rounded shadow" alt="Capítulo 3">
+    <img src="{% static 'sobre/lud-violino-evento.jpeg' %}" class="img-fluid rounded shadow" alt="Capítulo 3">
   </div>
   <div class="col-md-6">
     <h3 class="text-warning">Capítulo 3: Ludwig, Violinista</h3>
@@ -40,7 +41,7 @@
 <!-- Capítulo 4 -->
 <div class="row align-items-center mb-5 flex-md-row-reverse">
   <div class="col-md-6">
-    <img src="/media/sobre/lud-projeto-ant-1.jpeg" class="img-fluid rounded shadow" alt="Capítulo 4">
+    <img src="{% static 'sobre/lud-projeto-ant-1.jpeg' %}" class="img-fluid rounded shadow" alt="Capítulo 4">
   </div>
   <div class="col-md-6">
     <h3 class="text-warning">Capítulo 4: Projetos Sociais</h3>
@@ -48,11 +49,10 @@
   </div>
 </div>
 
-
 <!-- Capítulo 5 -->
 <div class="row align-items-center mb-5">
   <div class="col-md-6">
-    <img src="/media/sobre/lud-regendo.jpeg" class="img-fluid rounded shadow" alt="Capítulo 5">
+    <img src="{% static 'sobre/lud-regendo.jpeg' %}" class="img-fluid rounded shadow" alt="Capítulo 5">
   </div>
   <div class="col-md-6">
     <h3 class="text-warning">Capítulo 5: Professor na Pandemia</h3>
@@ -60,11 +60,10 @@
   </div>
 </div>
 
-
 <!-- Capítulo 6 -->
 <div class="row align-items-center mb-5 flex-md-row-reverse">
   <div class="col-md-6">
-    <img src="/media/sobre/lud-projeto-bb.jpeg" class="img-fluid rounded shadow" alt="Capítulo 6">
+    <img src="{% static 'sobre/lud-projeto-bb.jpeg' %}" class="img-fluid rounded shadow" alt="Capítulo 6">
   </div>
   <div class="col-md-6">
     <h3 class="text-warning">Capítulo 6: Legado</h3>

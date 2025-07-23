@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}Eventos{% endblock %}
 
 {% block content %}
 
 <style>
   .hero-eventos {
-    background-image: url('/media/aulas/hero-eventos-3.jpeg');
+    background-image: url('{% static "aulas/hero-eventos-3.jpeg" %}');
     background-size: cover;
     background-position: center;
     height: 70vh;
