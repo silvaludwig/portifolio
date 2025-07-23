@@ -3,6 +3,7 @@ services:
     name: portfolio
     env: python
     buildCommand: |
+      cd meu_site
       pip install -r requirements.txt
       python manage.py collectstatic --noinput
     startCommand: gunicorn meu_site.wsgi:application
