@@ -2,7 +2,9 @@ services:
   - type: web
     name: portfolio
     env: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
     startCommand: gunicorn meu_site.meu_site.wsgi:application --chdir meu_site
     envVars:
       - key: DJANGO_SETTINGS_MODULE
@@ -10,4 +12,4 @@ services:
       - key: SECRET_KEY
         generateValue: true
       - key: DEBUG
-        value: true
+        value: false
