@@ -3,7 +3,7 @@ services:
     name: seu-portfolio
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn meu_site.wsgi
+    startCommand: gunicorn meu_site.wsgi:application
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: meu_site.settings
